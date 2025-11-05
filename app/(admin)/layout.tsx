@@ -6,21 +6,17 @@ import {
   MenubarTrigger,
 } from "@/components/ui/menubar"
 
-import { getServerSession } from "next-auth/next";
 import Link from 'next/link'
-import { redirect } from "next/navigation";
-import Header from "@/components/header";
-import { authOptions } from "../lib/auth";
 
-export default async function  RootLayout({
+import Header from "@/components/header";
+
+
+export default  function  RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-    const session = await getServerSession(authOptions);
-    if (!session?.user) {
-      return redirect("/authentication");
-    }
+
   return (
      <Card className='m-4 p-3 max-w-2xl md:mx-auto rounded-2xl '>
       <Header />

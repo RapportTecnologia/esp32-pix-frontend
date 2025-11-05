@@ -16,8 +16,8 @@ const Home = () => {
         <p className="text-lg text-gray-700 max-w-xl">
           Conecte seu ESP32 à internet, controle dispositivos remotamente e explore o mundo IoT com facilidade.
         </p>
-        <Button onClick={() => router.push("/authentication")} className="mt-8 bg-primary text-white font-semibold py-3 px-8 rounded-lg hover:bg-secondary hover:text-700 transition">
-          Fazer Login
+        <Button onClick={() => router.push("/dashboard")} className="mt-8 bg-primary text-white font-semibold py-3 px-8 rounded-lg hover:bg-secondary hover:text-700 transition">
+          Entra no Dashboard
         </Button>
       </section>
 

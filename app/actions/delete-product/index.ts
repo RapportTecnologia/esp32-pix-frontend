@@ -3,7 +3,6 @@
 import { prisma } from "@/app/lib/prisma";
 import { actionClient } from "@/lib/next-safe-action";
 import { revalidatePath } from "next/cache";
-import { act } from "react";
 import z from "zod";
 
 export const deleteProduct = actionClient
