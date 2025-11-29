@@ -23,7 +23,7 @@ Este projeto usa Prisma com suporte a **PostgreSQL** e **SQLite**. O provider é
 |----------|-----------|
 | `DATABASE_URL` | URL de conexão do banco de dados |
 | `DATABASE_PROVIDER` | Provider a usar: `postgresql` ou `sqlite` (opcional) |
-| `PORT` | Porta do servidor (padrão: 6000) |
+| `PORT` | Porta do servidor (padrão: 6500) |
 
 ### PostgreSQL (Produção)
 
@@ -116,7 +116,7 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:6000](http://localhost:6000) with your browser to see the result.
+Open [http://localhost:6500](http://localhost:6500) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 

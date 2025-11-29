@@ -8,10 +8,10 @@
 # Dependências: Node.js, npm/pnpm, pm2 instalado globalmente (`npm i -g pm2`).
 # -----------------------------------------------------------------------------
 
-set -euo pipefail
+set -eu pipefail
 
-APP_NAME="esp32-pix-frontend"
-APP_PORT="${PORT:-6000}"
+APP_NAME="Café Express"
+APP_PORT="${PORT:-6500}"
 
 # Descobre a raiz do projeto (um nível acima da pasta scripts/)
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
