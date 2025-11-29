@@ -1,9 +1,8 @@
-// AUTO-GENERATED - Não edite diretamente
-// Gerado por scripts/setup-db.js
-// Provider: postgresql
+// Schema alternativo para SQLite - uso apenas em desenvolvimento
+// Este arquivo é usado quando DATABASE_URL não está configurada
 
 datasource db {
-  provider = "postgresql"
+  provider = "sqlite"
   url      = env("DATABASE_URL")
 }
 
