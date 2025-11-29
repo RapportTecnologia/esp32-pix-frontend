@@ -7,10 +7,24 @@ import { prisma } from "@/app/lib/prisma";
 import { Order } from "@/app/types/order";
 
 import { getProducts } from "@/app/actions/get-product";
+import { validateApiKey } from "@/lib/auth";
 
 
 export async function POST(req: NextRequest) {
   try {
+    // Validar API Key
+    const apiKey = req.headers.get("x-api-key");
+    if (apiKey) {
+      const keyData = await validateApiKey(apiKey);
+      if (!keyData) {
+        return NextResponse.json(
+          { error: "API Key inválida ou expirada" },
+          { status: 401 }
+        );
+      }
+    }
+    // Se não há API key, a requisição ainda pode vir do frontend autenticado
+    
     //const { amount, payerEmail, description } = await req.json() as CreateOrderBody;
     const product = await getProducts();
     if (!product[0].amount) {

@@ -52,8 +52,12 @@ model User {
   emailVerified DateTime?
   image         String?
   password      String
+  role          String    @default("user") // admin, user
   accounts      Account[]
   sessions      Session[]
+  apiKeys       ApiKey[]
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime?
 }
 
 model Account {
@@ -100,6 +104,19 @@ model Order {
   paymentUrl   String?
   createdAt    DateTime    @default(now())
   updatedAt    DateTime?
+}
+
+model ApiKey {
+  id          String    @id @default(cuid())
+  name        String
+  key         String    @unique
+  userId      String
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lastUsedAt  DateTime?
+  expiresAt   DateTime?
+  isActive    Boolean   @default(true)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime?
 }` : `model Order {
   id           String   @id @default(cuid())
   paymentId    String   @unique
@@ -111,6 +128,19 @@ model Order {
   paymentUrl   String?
   createdAt    DateTime @default(now())
   updatedAt    DateTime?
+}
+
+model ApiKey {
+  id          String    @id @default(cuid())
+  name        String
+  key         String    @unique
+  userId      String
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lastUsedAt  DateTime?
+  expiresAt   DateTime?
+  isActive    Boolean   @default(true)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime?
 }`}
 `;
 

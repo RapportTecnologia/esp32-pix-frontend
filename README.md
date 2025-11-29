@@ -1,4 +1,17 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ESP-PIX Frontend - Dashboard de Pagamentos PIX
+
+![visitors](https://visitor-badge.laobi.icu/badge?page_id=RapportTecnologia.esp32-pix-frontend)
+[![Issues](https://img.shields.io/github/issues/RapportTecnologia/esp32-pix-workspace)](https://github.com/RapportTecnologia/esp32-pix-workspace/issues)
+[![Stars](https://img.shields.io/github/stars/RapportTecnologia/esp32-pix-workspace)](https://github.com/RapportTecnologia/esp32-pix-workspace/stargazers)
+[![Forks](https://img.shields.io/github/forks/RapportTecnologia/esp32-pix-workspace)](https://github.com/RapportTecnologia/esp32-pix-workspace/network/members)
+[![Language](https://img.shields.io/badge/Language-TypeScript-blue.svg)]()
+[![License: CC BY 4.0](https://img.shields.io/badge/license-CC%20BY%204.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/)
+
+---
+
+> **Fork:** Este projeto é um fork/adaptação do trabalho original de [mazinhoandrade](https://github.com/mazinhoandrade).
+
+Este é um projeto [Next.js](https://nextjs.org) criado com [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Configuração do Banco de Dados
 
@@ -102,3 +115,18 @@ MP_ACCESS_TOKEN=
 MP_WEBHOOK_SECRET=
 npm run dev
 ```
+
+---
+
+## Autor / Mantenedor
+
+**Carlos Delfino**
+
+- 🌐 Website: [https://carlosdelfino.eti.br](https://carlosdelfino.eti.br)
+- 📧 Email: [consultoria@carlosdelfino.eti.br](mailto:consultoria@carlosdelfino.eti.br)
+- 📱 WhatsApp: [(+55 85) 98520-5490](https://wa.me/5585985205490)
+- 🐙 GitHub: [https://github.com/carlosdelfino](https://github.com/carlosdelfino)
+
+---
+
+> Baseado no projeto original de [mazinhoandrade](https://github.com/mazinhoandrade).
