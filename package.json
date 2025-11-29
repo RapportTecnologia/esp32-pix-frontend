@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "node scripts/setup-db.js && next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p ${PORT:-6000}",
     "lint": "eslint",
     "db:setup": "node scripts/setup-db.js",
     "db:generate": "prisma generate",
