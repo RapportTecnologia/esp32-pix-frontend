@@ -1,9 +1,9 @@
 // AUTO-GENERATED - Não edite diretamente
 // Gerado por scripts/setup-db.js
-// Provider: sqlite
+// Provider: postgresql
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -53,16 +53,22 @@ model Product {
   updatedAt   DateTime?
 }
 
+enum OrderStatus {
+  PENDING
+  APPROVED
+  CANCELLED
+}
+
 model Order {
-  id           String   @id @default(cuid())
-  paymentId    String   @unique
+  id           String      @id @default(cuid())
+  paymentId    String      @unique
   amount       Int
   description  String
-  status       String   @default("PENDING")
+  status       OrderStatus @default(PENDING)
   qrCode       String?
   qrCodeBase64 String?
   paymentUrl   String?
-  createdAt    DateTime @default(now())
+  createdAt    DateTime    @default(now())
   updatedAt    DateTime?
 }
 
