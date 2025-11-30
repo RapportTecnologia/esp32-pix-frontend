@@ -23,13 +23,58 @@ Este projeto usa Prisma com suporte a **PostgreSQL** e **SQLite**. O provider é
 |----------|-----------|
 | `DATABASE_URL` | URL de conexão do banco de dados |
 | `DATABASE_PROVIDER` | Provider a usar: `postgresql` ou `sqlite` (opcional) |
+| `PORT` | Porta do servidor (padrão: 6500) |
 
 ### PostgreSQL (Produção)
 
+#### Setup Automatizado
+
+**Passo 1:** Configure o arquivo `.env` com a `DATABASE_URL`:
+
 ```bash
-DATABASE_URL="postgresql://user:password@host:5432/database"
+cp .env.example .env
+vi .env
+```
+
+Adicione sua `DATABASE_URL`:
+```bash
+DATABASE_URL="postgresql://rapport_pix:sua_senha_aqui@localhost:5432/rapport_pix"
+```
+
+**Passo 2:** Execute o script de configuração:
+
+```bash
+# O script lê automaticamente as credenciais do .env
+./scripts/db/setup-database.sh
+```
+
+O script irá:
+- ✅ Ler a `DATABASE_URL` do arquivo `.env`
+- ✅ Extrair usuário, senha, host, porta e banco automaticamente
+- ✅ Criar o usuário no PostgreSQL
+- ✅ Criar o banco de dados
+- ✅ Configurar permissões adequadas
+- ✅ Testar a conexão
+
+#### Setup Manual
+
+Alternativamente, execute o SQL diretamente:
+
+```bash
+psql -U postgres -f scripts/db/setup-postgres.sql
+```
+
+#### Configuração do .env
+
+Após criar o banco, configure o arquivo `.env`:
+
+```bash
+DATABASE_URL="postgresql://rapport_pix:rapport_pix_2024_secure@localhost:5432/rapport_pix"
+DATABASE_PROVIDER="postgresql"
 npm run dev
 ```
+
+> 📋 **Nota:** Consulte o arquivo `SENSIBLE.md` para detalhes completos sobre credenciais e configuração.
 
 ### SQLite (Desenvolvimento)
 
@@ -71,7 +116,7 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:6500](http://localhost:6500) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 

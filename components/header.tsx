@@ -1,5 +1,5 @@
 "use client"
-import { Microchip, LogOut, User } from 'lucide-react'
+import { Coffee, LogOut, User } from 'lucide-react'
 import React from 'react'
 import { Button } from './ui/button'
 import { logoutAction } from '@/app/actions/auth'
@@ -12,7 +12,11 @@ const Header = ({ userName }: HeaderProps) => {
   return (
     <div className='flex justify-between items-center mb-3'>
       <div className="text-2xl flex justify-center items-center gap-2">
-        ESP - PIX <Microchip />
+        <div className="flex flex-col leading-tight">
+          <span>Café Expresso</span>
+          <span className="text-xs text-muted-foreground">Sistemas de Cobrança Embarcada</span>
+        </div>
+        <Coffee />
       </div>
       {userName && (
         <div className="flex items-center gap-2">

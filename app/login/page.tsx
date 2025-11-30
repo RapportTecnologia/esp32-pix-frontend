@@ -6,7 +6,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Microchip, LogIn, Loader2 } from "lucide-react";
+import { LogIn, Loader2, Coffee } from "lucide-react";
 import { loginAction } from "@/app/actions/auth";
 import { toast } from "sonner";
 
@@ -34,12 +34,12 @@ export default function LoginPage() {
     <div className="min-h-screen flex items-center justify-center p-4">
       <Card className="w-full max-w-md p-8 rounded-2xl">
         <div className="flex flex-col items-center mb-8">
-          <div className="flex items-center gap-2 text-3xl font-bold mb-2">
-            <Microchip className="w-8 h-8" />
-            ESP-PIX
+          <div className="flex items-center gap-2 text-3xl font-bold mb-1">
+            <Coffee className="w-8 h-8" />
+            Café Expresso
           </div>
-          <p className="text-muted-foreground text-sm">
-            Faça login para acessar o painel
+          <p className="text-muted-foreground text-xs">
+            Sistemas de Cobrança Embarcada
           </p>
         </div>
 

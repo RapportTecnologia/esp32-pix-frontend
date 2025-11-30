@@ -49,3 +49,8 @@ next-env.d.ts
 # SQLite dev database
 *.db
 *.db-journal
+
+.next/
+
+# Sensitive information
+SENSIBLE.md

@@ -9,6 +9,14 @@ const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
 
+// Carrega variáveis de ambiente do .env (caso exista)
+try {
+  // eslint-disable-next-line global-require, import/no-extraneous-dependencies
+  require('dotenv').config();
+} catch (e) {
+  // Se dotenv não estiver instalado, apenas segue em frente
+}
+
 const isDevelopment = process.env.NODE_ENV !== 'production';
 const databaseUrl = process.env.DATABASE_URL;
 const databaseProvider = process.env.DATABASE_PROVIDER || '';

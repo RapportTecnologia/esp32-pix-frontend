@@ -19,13 +19,9 @@ import { useAction } from 'next-safe-action/hooks'
 
 
 const formSchema = z.object({
-  amount: z.number({ message: "Campo obrigatório" }),
+  amount: z.number({ message: "Campo obrigatório" }),
   description: z.string().min(0).optional(),
-  quantity: z
-  .coerce
-  .number()
-  .refine((val) => !isNaN(val), { message: "Informe um número válido" })
-  .optional(),
+  quantity: z.number({ message: "Informe um número válido" }).optional(),
 })
 
 interface Props {
@@ -120,7 +116,15 @@ const UpSertForm = ({isOpen, onSuccess, product}: Props) => {
             <FormItem>
               <FormLabel>Quantidade</FormLabel>
               <FormControl>
-                <Input type="number" {...field} />
+                <Input 
+                  type="number" 
+                  {...field}
+                  value={field.value ?? ""}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    field.onChange(value === "" ? undefined : Number(value));
+                  }}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
