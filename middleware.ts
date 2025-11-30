@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 // Rotas públicas (não requerem login)
-const publicRoutes = ["/login", "/api/webhook", "/api/ping", "/api/auth/validate-key"];
+const publicRoutes = ["/", "/login", "/api/webhook", "/api/ping", "/api/auth/validate-key"];
 
 // Rotas que requerem apenas API key (para firmware ESP32)
 const apiKeyRoutes = ["/api/create_payment", "/api/status"];
