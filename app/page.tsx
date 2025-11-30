@@ -1,6 +1,7 @@
 "use client"
 import { Button } from '@/components/ui/button'
 import { useRouter } from 'next/navigation';
+import Image from 'next/image'
 import React from 'react'
 
 
@@ -26,6 +27,16 @@ const Home = () => {
           >
             Acessar dashboard de demonstração
           </Button>
+        </div>
+        <div className="mt-12">
+          <Image
+            src="/rapport-pix.png"
+            alt="Máquina de Café Expresso com pagamento PIX via ESP32"
+            width={500}
+            height={500}
+            className="rounded-lg shadow-lg mx-auto"
+            priority
+          />
         </div>
       </section>
 
